@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:red_blue_back/ui/home_view.dart';
 import 'package:red_blue_back/ui/home_red.dart';
-import 'package:red_blue_back/ui/home_blue.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({super.key});
+class HomeBlue extends StatelessWidget {
+  HomeBlue({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+    return Container(
+        decoration: BoxDecoration(color: Colors.blue),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           ElevatedButton(
-            child: Text("click to go blue"),
+            child: Text("click to go back"),
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomeBlue()));
+                  context, MaterialPageRoute(builder: (context) => HomeView()));
             },
             style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
+                primary: Colors.black,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 textStyle:
                     TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
@@ -35,6 +33,6 @@ class HomeView extends StatelessWidget {
                 textStyle:
                     TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
           )
-        ])));
+        ]));
   }
 }
